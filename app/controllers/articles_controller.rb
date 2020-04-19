@@ -1,9 +1,9 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
-  
-  def show
-  
-  end
+  before_action :set_article, only: %i[show edit update destroy]
+
+  def show; end
 
   def index
     @articles = Article.all
@@ -13,9 +13,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  def edit
-  
-  end
+  def edit; end
 
   def create
     @article = Article.new(article_params)
@@ -24,7 +22,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article was created successfully."
       redirect_to @article
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -33,7 +31,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article was updated successfully."
       redirect_to @article
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -51,5 +49,4 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :description)
   end
-
 end
