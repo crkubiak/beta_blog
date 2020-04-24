@@ -120,3 +120,12 @@ Style/StringLiterals:
 
 Style/TrivialAccessors:
   Enabled: false
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: false
+Lint/RaiseException:
+  Enabled: false
+Lint/StructNewOverride:
+  Enabled: false
+Style/ExponentialNotation:
+  Enabled: false
